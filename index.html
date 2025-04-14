@@ -1,47 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  
-  <!-- Sign-up form start -->
+  <div class="app">
+    <div class="app__banner-wrapper">
+      <img src="./assets/images/illustration-sign-up-mobile.svg" alt="banner" class="app__banner" />
+    </div>
+    <div class="app__content">
+      <h1 class="app__content-title">Stay updated!</h1>
+      <p class="app__content-desc">Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul class="app__content-list">
+        <li class="app__content-list-item">
+          <img src="./assets/images/icon-list.svg" alt="icon" />
+          <p>Product discovery and building what matters</p>
+        </li>
+        <li class="app__content-list-item">
+          <img src="./assets/images/icon-list.svg" alt="icon" />
+          <p>Measuring to ensure updates are a success</p>
+        </li>
+        <li class="app__content-list-item">
+          <img src="./assets/images/icon-list.svg" alt="icon" />
+          <p>And much more!</p>
+        </li>
+      </ul>
+      <form class="app__content-form" id="appForm" name="appForm">
+        <div class="form__label-wrapper">
+          <label for="email" class="form__label">Email address</label>
+          <span class="error-message" id="errorMessage">Valid email required</span>
+        </div>
+        <input type="email" class="form__input" id="email" name="email" placeholder="email@company.com" required />
+        <input type="submit" class="form__submit" id="formSubmit" name="formSubmit"
+          value="Subscribe to monthly newsletter" />
 
-  Stay updated!
-
-  Join 60,000+ product managers receiving monthly updates on:
-
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
-
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+        <dialog id="modalSuccess" class="success__modal success__modal-hiden">
+          <div class="modal__content-wrapper">
+            <img src="./assets/images/icon-success.svg" alt="success" />
+            <h2 class="modal__content-header">Thanks for subscribing</h2>
+            <p class="modal__content-text">A confirmation email has been sent to
+              <span class="text-email">ash@loremcompany.com.</span> Plese open it and click
+              the button inside to cinfirm your subscrition.</p>
+          </div>
+          <div class="modal__btn-wrapper">
+            <button id="closeModal" class="modal__btn-close">Dismiss message</button>
+          </div>
+        </dialog>
+      </form>
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
